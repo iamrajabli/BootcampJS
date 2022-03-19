@@ -44,3 +44,12 @@ while (d < 5) {
     d++;
     console.log(myName);
 }
+
+
+// Example 3 - Do While
+// Do while zamanı program ən az bir dəfə mütləq çalışır.
+let p = 0;
+do {
+    console.log(p);
+    p++;
+} while (p < 5);
