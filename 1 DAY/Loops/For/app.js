@@ -39,3 +39,14 @@ let myName = "Hikmat";
 for (let i = 0; i < 5; i++) {
     console.log(myName);
 }
+
+// Example 3
+// Sonsuz loop? 
+// For 3 parametr ala bilir. Dəyər, şərt, addım
+// Amma dəyəri global scope olaraq da tanımlamaq olar. 
+// Hətta addımı (i++)-sızda yazmaq olar. Addımı block scope kimi tanımlamaq olar
+// Hətta hamsın silmək olar...
+
+// for (;;) {
+
+// }
