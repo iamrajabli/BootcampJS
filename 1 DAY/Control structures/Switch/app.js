@@ -1,6 +1,6 @@
 'use strict';
 
-let dayOfWeek = 1;
+let dayOfWeek = 2;
 
 
 // Switch Example 
