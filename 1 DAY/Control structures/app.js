@@ -47,3 +47,20 @@ if (c_a > c_b) {
 } else {
     console.log(`${c}'a yaxın ədəd ${a}'dir`);
 }
+
+// QISA IF
+
+let d = 10,
+    y = 6,
+    p = 0;
+
+
+p = d > y ? d + y : d - y; // Qısa if ilə yazılış
+
+if (d > y) { // Uzun if ilə yazılış
+    p = d + y;
+} else {
+    p = d - y;
+}
+
+console.log(p);
