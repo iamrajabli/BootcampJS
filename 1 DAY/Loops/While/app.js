@@ -35,3 +35,12 @@ while (v <= 5) {
     console.log(v);
     v++;
 }
+
+// Example 2 - Adını 5 dəfə ekrana yazdır
+let myName = "Hikmat";
+
+let d = 0;
+while (d < 5) {
+    d++;
+    console.log(myName);
+}
