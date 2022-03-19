@@ -20,3 +20,15 @@ if (15 > 7) {
 }
 
 console.log(personName);
+
+// Həmçinin validate zamanı ; istifadə edə bilərik. Bu zaman V8 avtomatik yeni sətirə keçəcək və yeni sətirdəki kodların heç bir bağlılığı qalmayacaq. 
+
+const myHeight = 185;
+
+if (myHeight < 170) {
+    console.log('Orta boy');
+} else if (myHeight < 180);
+
+{
+    console.log('show');
+}
