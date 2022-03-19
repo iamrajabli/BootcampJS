@@ -9,3 +9,13 @@ if (brithOfYear) {
 } else {
     console.log('FALSE');
 }
+
+// Example 2 - Dəyər 0 olarsa? - False'in dəyəri 0 olduğu üçün FALSE olacaq
+
+let secondEx = 0;
+
+if (secondEx) {
+    console.log('TRUE');
+} else {
+    console.log('FALSE');
+}
