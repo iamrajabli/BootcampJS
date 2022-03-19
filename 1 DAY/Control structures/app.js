@@ -32,3 +32,18 @@ if (myHeight < 170) {
 {
     console.log('show');
 }
+
+// a b və c ədədləri verilir. a və b ədədlərindən hansının c ədədinə daha yaxın olduğunu tapın. ****
+
+const a = 123100;
+const b = 2230;
+const c = 30;
+
+let c_a = a - c;
+let c_b = b - c;
+
+if (c_a > c_b) {
+    console.log(`${c}'a yaxın ədəd ${b}'dir`);
+} else {
+    console.log(`${c}'a yaxın ədəd ${a}'dir`);
+}
