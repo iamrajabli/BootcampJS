@@ -19,3 +19,13 @@ if (secondEx) {
 } else {
     console.log('FALSE');
 }
+
+// Example 3 - Daha maraqlı birşey - V8 Stringlərdə + u toplama kimi yox birləştirmə kimi başa düşdüyü üçün şellənə bilərik
+
+let thirdEx = 'Hi!';
+
+if (thirdEx + 99) {
+    console.log('TRUE');
+} else {
+    console.log('FALSE');
+}
