@@ -32,3 +32,10 @@ switch (true) {
 for (let i = 1; i <= 5; i++) {
     console.log(i);
 }
+
+// Example 2 - Adını 5 dəfə ekrana yazdır
+let myName = "Hikmat";
+
+for (let i = 0; i < 5; i++) {
+    console.log(myName);
+}
