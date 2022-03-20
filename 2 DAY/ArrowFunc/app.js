@@ -19,3 +19,12 @@ const fatArrow = () => {
 }
 
 fatArrow();
+
+// Example 3 
+//  _ ilə tanımlama
+
+const Arrow = _ => {
+    console.log('Arrow');
+}
+
+Arrow();
