@@ -1,7 +1,7 @@
 'use strict';
 // IF - ELSE IF - ELSE
 
-// V8 Engine  kodları yuxarıdan aşağı oxuyur.
+// Example 1 - V8 Engine  kodları yuxarıdan aşağı oxuyur.
 const myAge = 22;
 
 if (myAge > 30) {
@@ -10,7 +10,7 @@ if (myAge > 30) {
     console.log('false');
 }
 
-// If blokunun içində sıfırdan yaradılan variable blokdan kənar çağrıla bilmir. Global scope variable adı ilə Block scope variable adı eyni ola bilər. Variable məlumatları çağrıldığı yerə görə ekranda görünəcək. 
+// Example 2 - If blokunun içində sıfırdan yaradılan variable blokdan kənar çağrıla bilmir. Global scope variable adı ilə Block scope variable adı eyni ola bilər. Variable məlumatları çağrıldığı yerə görə ekranda görünəcək. 
 
 let personName = 'Hikmat';
 
@@ -21,7 +21,7 @@ if (15 > 7) {
 
 console.log(personName);
 
-// Həmçinin validate zamanı ; istifadə edə bilərik. Bu zaman V8 avtomatik yeni sətirə keçəcək və yeni sətirdəki kodların heç bir bağlılığı qalmayacaq. 
+// Example 3 - Həmçinin validate zamanı ; istifadə edə bilərik. Bu zaman V8 avtomatik yeni sətirə keçəcək və yeni sətirdəki kodların heç bir bağlılığı qalmayacaq. 
 
 const myHeight = 185;
 
@@ -33,7 +33,7 @@ if (myHeight < 170) {
     console.log('show');
 }
 
-// a b və c ədədləri verilir. a və b ədədlərindən hansının c ədədinə daha yaxın olduğunu tapın. ****
+// Task 1 - a b və c ədədləri verilir. a və b ədədlərindən hansının c ədədinə daha yaxın olduğunu tapın. ****
 
 const a = 123100;
 const b = 2230;
@@ -48,7 +48,7 @@ if (c_a > c_b) {
     console.log(`${c}'a yaxın ədəd ${a}'dir`);
 }
 
-// QISA IF
+// Example 4 - QISA IF
 
 let d = 10,
     y = 6,
