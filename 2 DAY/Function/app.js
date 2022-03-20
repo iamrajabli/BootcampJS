@@ -23,3 +23,13 @@ function calculator(start, end) {
 
 calculator(5, 111);
 calculator(52, 142);
+
+
+// Example 3
+// İki ədədin cəmini hesablayan funksiya
+
+function calcT(a, b) {
+    console.log(a + b);
+}
+
+calcT(2, 4);
