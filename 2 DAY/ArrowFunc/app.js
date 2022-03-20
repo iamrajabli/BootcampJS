@@ -28,3 +28,13 @@ const Arrow = _ => {
 }
 
 Arrow();
+
+
+// Example 4
+// Funksiyanın parametri varsa
+
+const funcPara = text => {
+    console.log(text);
+}
+
+funcPara('Hi!');
