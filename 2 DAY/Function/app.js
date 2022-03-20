@@ -33,3 +33,14 @@ function calcT(a, b) {
 }
 
 calcT(2, 4);
+
+// Example 4
+// Return istifadəsi zaman return dəyəri funksiyanın çağrıldığı yerə göndərir. Ama console.log olmadığı üçün funkisyanı çağırdığımız yerdə gələn dəyəri dəyişkənin içinə almalıyıq
+// ** Returndan sonra yazılan kodlar işləmir. Çünki return həm dəyər döndürür həm də kodu sonlandırır.
+
+function calcRet(a, b) {
+    return a + b;
+}
+
+let c = calcRet(5, 10);
+console.log(c);
