@@ -11,3 +11,13 @@ function Person() {
 }
 
 Person(personName)
+
+// Example 2 
+
+let personSurname = "Rajabli"; // Global scope
+
+// Funksiyaya parametr vermədikdə, console.log varsa çağırmağa ehtiyac yoxdur
+function Person() {
+    let personSurname = "Rajabov" // Shadow variable - Global scope ilə eyni adlara sahib ola bilərlər dəyişkənlər. 
+    console.log(`My surname is ${personSurname}`);
+}
