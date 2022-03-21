@@ -13,3 +13,9 @@ console.log(cars);
 
 cars[3] = 'Toyota';
 console.log(cars);
+
+// Example 3 
+// Massivdə var olan veriləni yeniləmə
+
+cars[0] = 'Hundai';
+console.log(cars);
