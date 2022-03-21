@@ -46,3 +46,9 @@ let newArr = [1, 2, 3, 4, 5, 6];
 let shorArr = newArr.splice(5, 1, '20');
 console.log(newArr);
 console.log(shorArr); // 6
+
+// Example 9
+// Concat istifadəsi
+// İki massivi birləşdirir və yeni dəyişkənə atır. Yəni;
+let twoArray = newArr.concat(personNames);
+console.log(twoArray);
