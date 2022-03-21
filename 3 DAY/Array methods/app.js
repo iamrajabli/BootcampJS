@@ -26,3 +26,8 @@ console.log(personNames.join(" , "));
 // Massivi sola sürüşdürmək. Yəni birinci elementin silmək
 personNames.shift();
 console.log(personNames);
+
+// Example 6
+// Massivi sağa sürüşdürərək solunda açılan yerə element əlavə etmək
+personNames.unshift("Yeni ad");
+console.log(personNames);
