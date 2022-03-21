@@ -40,3 +40,8 @@ let Rajab = {
 }
 Rajab.ageCal();
 console.log(Rajab.age);
+
+// İndi əgər istəsək bu obyetkləri massivlərin içinə ata bilərik. Yəni;
+// Example 4
+let Person = [Hikmat, Nail, Rajab];
+console.log(Person);
