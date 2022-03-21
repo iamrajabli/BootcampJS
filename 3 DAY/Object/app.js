@@ -26,3 +26,17 @@ let Nail = {
     }
 }
 console.log(Nail.ageCal(Nail.birthOfYear));
+
+// Example 3
+let Rajab = {
+    name: 'Rajab',
+    surname: 'Aliev',
+    birthOfYear: 2000,
+    height: 202,
+    weight: 121,
+    ageCal: function() { // Objectin içində funksiya yazmaq olar.
+        this.age = 2022 - this.birthOfYear;
+    }
+}
+Rajab.ageCal();
+console.log(Rajab.age);
