@@ -21,3 +21,8 @@ console.log(personNames.join(" , "));
 let deletedName = personNames.pop(); // pop sonuncu elementdir. Yəni;
 console.log(deletedName);
 console.log(personNames.join(" , "));
+
+// Example 5
+// Massivi sola sürüşdürmək. Yəni birinci elementin silmək
+personNames.shift();
+console.log(personNames);
