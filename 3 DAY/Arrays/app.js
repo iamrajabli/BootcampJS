@@ -28,5 +28,9 @@ cars[20] = 'Porsche';
 console.log(cars);
 console.log(cars[10]); // boş olan veriləni çağırmağa çalışdıqda UNDEFINED alarıq.
 
-let salam;
-console.log(salam);
+// Example 5
+// For array istifadəsi
+
+for (let i = 0; i < cars.length; i++) {
+    console.log(cars[i]);
+}
