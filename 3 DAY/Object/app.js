@@ -45,3 +45,9 @@ console.log(Rajab.age);
 // Example 4
 let Person = [Hikmat, Nail, Rajab];
 console.log(Person);
+
+// Example 5 
+// Fərqli object yaratma üsulu
+let newObject = new Object();
+newObject.create = 2022;
+console.log(newObject.create);
