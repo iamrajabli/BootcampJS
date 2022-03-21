@@ -15,3 +15,9 @@ console.log(personNames.join(" _   "));
 // Index nömrəsini yazar deyil, ən son indeksdən sonraki indexə verilən əlavə etmə
 console.log(personNames.push("Rajab")); // Push massivin sonuncu elementinin indeksi + 1 dir.
 console.log(personNames.join(" , "));
+
+// Example 4 
+// Sonuncu elementin çıxarılması
+let deletedName = personNames.pop(); // pop sonuncu elementdir. Yəni;
+console.log(deletedName);
+console.log(personNames.join(" , "));
