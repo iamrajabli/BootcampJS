@@ -6,3 +6,10 @@
 
 let cars = ['Bmw', 'Mercedes', 'Audi'];
 console.log(cars);
+
+
+// Example 2
+// Massivin sırasına əlavə edilmə
+
+cars[3] = 'Toyota';
+console.log(cars);
