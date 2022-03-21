@@ -31,3 +31,9 @@ console.log(personNames);
 // Massivi sağa sürüşdürərək solunda açılan yerə element əlavə etmək
 personNames.unshift("Yeni ad");
 console.log(personNames);
+
+// Example 7
+// Massivin istədiyin elementini silmə
+// Sildikdə indeks nömrəsi qalır. Sadəcə sildiyi yer boş olaraq işarələnir
+delete personNames[1];
+console.log(personNames);
