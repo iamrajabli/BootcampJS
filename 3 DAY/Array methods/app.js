@@ -52,3 +52,9 @@ console.log(shorArr); // 6
 // İki massivi birləşdirir və yeni dəyişkənə atır. Yəni;
 let twoArray = newArr.concat(personNames);
 console.log(twoArray);
+
+// Example 10
+// Slice istifadəsi
+// İstədiyin aralıqdan elementləri seçib bir dəyişkən yaradır
+let threeArr = twoArray.slice(1, 6);
+console.log(threeArr);
