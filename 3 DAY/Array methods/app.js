@@ -37,3 +37,12 @@ console.log(personNames);
 // Sildikdə indeks nömrəsi qalır. Sadəcə sildiyi yer boş olaraq işarələnir
 delete personNames[1];
 console.log(personNames);
+
+// Example 8 
+// Splice istifadəsi
+// İlk parametr hansı indeksdən başlayacağını göstərir. İkinci parametr başlanğıc nöqtəsindən hansı indeksə qədər siləcəyini göstərir. Üçüncü parametr isə nə əlavə edəcəyini göstərir. 
+// İlk iki parametr yeni bir dəyişkən yaradır və üçüncü parametr o dəyişkənə uyğun işləyir. Yəni;
+let newArr = [1, 2, 3, 4, 5, 6];
+let shorArr = newArr.splice(5, 1, '20');
+console.log(newArr);
+console.log(shorArr); // 6
