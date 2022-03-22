@@ -60,3 +60,31 @@ function deleteItem(e) {
         }
     }
 }
+
+// delete all items
+function deleteAllItems(e) {
+    e.preventDefault();
+
+    // taskList.innerHTML = '';
+
+    // for (let i = 0; i < taskList.children.length; i++) {
+    //     taskList.children[i].remove();
+    // }
+
+    // let i = 0
+    // do {
+    //     taskList.children[i].remove();
+    //     i++
+    // } while (i < taskList.children.length);
+
+    if (confirm('Are you sure?')) {
+        taskList.childNodes.forEach(item => {
+            if (item.nodeType === 1) {
+                item.remove();
+            }
+        })
+    }
+
+
+
+}
