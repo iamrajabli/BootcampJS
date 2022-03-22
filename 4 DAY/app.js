@@ -23,6 +23,13 @@ function eventListeners() {
     deleteAll.addEventListener('click', deleteAllItems);
 }
 
+// load items
+function loadItems(array) {
+    array.forEach(items => {
+        createNewElement(items);
+    })
+}
+
 // create new element
 function createNewElement(text) {
     // create li
