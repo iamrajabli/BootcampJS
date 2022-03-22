@@ -3,10 +3,10 @@ const form = document.querySelector('form');
 const input = document.querySelector('#txtTaskName');
 const deleteAll = document.querySelector('#btnDeleteAll');
 const taskList = document.querySelector('#task-list');
-let taskArr = ['item 1', 'item 2', 'item 3'];
+let items;
 
 // call load items
-loadItems(taskArr);
+loadItems(items);
 
 // call event listeners
 eventListeners();
@@ -24,7 +24,9 @@ function eventListeners() {
 }
 
 // load items
-function loadItems(array) {
+function loadItems(items) {
+
+    array = getItemFromLS();
     array.forEach(items => {
         createNewElement(items);
     })
@@ -59,6 +61,7 @@ function addNewItem(e) {
     }
 
     createNewElement(input.value);
+    setItemToLS(input.value);
 
     // clear input
     input.value = '';
@@ -73,6 +76,7 @@ function deleteItem(e) {
     if (e.target.className === 'fas fa-times') {
         if (confirm('Are you sure?')) {
             li.remove();
+            deleteItemFromLS(li.textContent);
         }
     }
 }
@@ -93,14 +97,33 @@ function deleteAllItems(e) {
     //     i++
     // } while (i < taskList.children.length);
 
+    // if (confirm('Are you sure?')) {
+    //     taskList.childNodes.forEach(item => {
+    //         if (item.nodeType === 1) {
+    //             item.remove();
+    //         }
+    //     })
+    // }
+
     if (confirm('Are you sure?')) {
-        taskList.childNodes.forEach(item => {
-            if (item.nodeType === 1) {
-                item.remove();
-            }
-        })
+        while (taskList.firstChild) {
+            taskList.removeChild(taskList.firstChild);
+        }
+        localStorage.clear();
     }
 
 
 
+}
+
+// get item from local storage
+function getItemFromLS() {
+
+    if (localStorage.getItem('items') === null) {
+        items = [];
+    } else {
+        items = JSON.parse(localStorage.getItem('items'));
+    }
+
+    return items;
 }
