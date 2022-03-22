@@ -127,3 +127,10 @@ function getItemFromLS() {
 
     return items;
 }
+
+// set item to local storage
+function setItemToLS(text) {
+    items = getItemFromLS();
+    items.push(text);
+    localStorage.setItem('items', JSON.stringify(items));
+}
