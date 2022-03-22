@@ -134,3 +134,14 @@ function setItemToLS(text) {
     items.push(text);
     localStorage.setItem('items', JSON.stringify(items));
 }
+
+// delete item from local storage
+function deleteItemFromLS(text) {
+    items.forEach((item, index) => {
+        if (item === text) {
+            items.splice(index, 1);
+        }
+        localStorage.setItem('items', JSON.stringify(items));
+    });
+
+}
