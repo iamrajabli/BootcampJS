@@ -3,11 +3,15 @@ const form = document.querySelector('form');
 const input = document.querySelector('#txtTaskName');
 const deleteAll = document.querySelector('#btnDeleteAll');
 const taskList = document.querySelector('#task-list');
+let taskArr = ['item 1', 'item 2', 'item 3'];
 
-// call Event Listeners
+// call load items
+loadItems(taskArr);
+
+// call event listeners
 eventListeners();
 
-// Event Listeners
+// event listeners
 function eventListeners() {
     // submit event
     form.addEventListener('submit', addNewItem);
@@ -19,18 +23,12 @@ function eventListeners() {
     deleteAll.addEventListener('click', deleteAllItems);
 }
 
-// add new item
-function addNewItem(e) {
-    e.preventDefault();
-    if (input.value === '') {
-        alert('Add new item!');
-        return;
-    }
-
+// create new element
+function createNewElement(text) {
     // create li
     const li = document.createElement('li');
     li.className = 'list-group-item list-group-item-secondary';
-    li.appendChild(document.createTextNode(input.value));
+    li.appendChild(document.createTextNode(text));
 
     // create a
     const a = document.createElement('a');
@@ -43,6 +41,17 @@ function addNewItem(e) {
 
     // add a to taskList
     taskList.appendChild(li);
+}
+
+// add new item
+function addNewItem(e) {
+    e.preventDefault();
+    if (input.value === '') {
+        alert('Add new item!');
+        return;
+    }
+
+    createNewElement(input.value);
 
     // clear input
     input.value = '';
