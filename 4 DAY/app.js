@@ -11,6 +11,12 @@ eventListeners();
 function eventListeners() {
     // submit event
     form.addEventListener('submit', addNewItem);
+
+    // delete an item
+    taskList.addEventListener('click', deleteItem);
+
+    // delete all
+    deleteAll.addEventListener('click', deleteAllItems);
 }
 
 // add new item
@@ -40,4 +46,17 @@ function addNewItem(e) {
 
     // clear input
     input.value = '';
+}
+
+// delete an item 
+function deleteItem(e) {
+    e.preventDefault();
+
+    const li = e.target.parentElement.parentElement;
+
+    if (e.target.className === 'fas fa-times') {
+        if (confirm('Are you sure?')) {
+            li.remove();
+        }
+    }
 }
