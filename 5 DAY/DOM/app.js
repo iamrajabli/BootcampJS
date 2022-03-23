@@ -12,3 +12,6 @@ let itemDocument = document;
 
 // Example 1 - Linkləri gətirmək
 itemDocument = document.links;
+
+// Example 2 - Formları gətirmək
+itemDocument = document.forms;
