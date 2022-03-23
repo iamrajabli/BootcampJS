@@ -15,3 +15,7 @@ titleId.innerText = 'Title edited 2' // 2
 // Rəngləri dəyişdirmək
 titleId.style.backgroundColor = 'red';
 titleId.style.color = 'white';
+
+// Modern seçim - querySelector / querySelectorAll
+// Example 3
+let titleQuery = document.querySelector('.title');
