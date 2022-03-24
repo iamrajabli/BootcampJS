@@ -32,3 +32,8 @@ let children = document.querySelector('ul');
 for (let i = 0; i < children.children.length; i++) {
     console.log(children.children[i]);
 }
+
+// Example 4 - nextElementSibling, previousElementSibling, parentElement
+console.log(children.children[1].nextElementSibling);
+console.log(children.children[1].previousElementSibling);
+console.log(children.children[1].parentElement);
