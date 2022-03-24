@@ -27,14 +27,6 @@ let titleQuery = document.querySelector('.title');
 let ul = document.querySelector('ul');
 console.log(ul);
 
-// Əgər səhifədəki bütün li-ləri seçmək istəyiriksə onda querySelectorAll istifadə etməliyik. Əks halda li-lərdən ilki seçiləcək.
-let li = document.querySelectorAll('li');
-console.log(li); // Nodelist kimi gəldiyi üçün forEach istifadə etmək lazımdır.
-
-li.forEach(item => {
-    item.style.backgroundColor = 'yellow';
-})
-
 // Şəkilin src-ını dəyişdirmək
 let img = document.querySelector('img');
 img.setAttribute('src', 'https://source.unsplash.com/200x200');
