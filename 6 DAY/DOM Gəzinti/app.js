@@ -24,3 +24,11 @@ console.log(node.firstElementChild); // Amma burda hər hansı sətir sayılmır
 // first olduğu üçün last da var :)
 console.log(node.lastChild);
 console.log(node.lastElementChild);
+console.log("************");
+
+// Example 3  - children
+// children bir başa teqlərin övladılarını göstərir. 
+let children = document.querySelector('ul');
+for (let i = 0; i < children.children.length; i++) {
+    console.log(children.children[i]);
+}
