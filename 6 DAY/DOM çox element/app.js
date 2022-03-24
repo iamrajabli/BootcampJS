@@ -35,3 +35,13 @@ itemsArrM3.forEach(element => {
     console.log(element);
 })
 console.log("*********************");
+
+
+// 2. Metod querySelectorAll
+// Example 2
+const itemsQuery = document.querySelectorAll('.item-group');
+
+// querySelectorAll ilə çağırılan teqlər NodeList şəklində gəlir. NodeList olduğu üçün array kimi davranır. Yəni forEach istifadə etmək olar.
+itemsQuery.forEach(element => {
+    console.log(element);
+})
