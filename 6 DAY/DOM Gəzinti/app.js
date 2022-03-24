@@ -15,4 +15,12 @@ console.log(node.childNodes);
 let childNodes = node.childNodes;
 childNodes.forEach(element => { // ** NodeList olduqda array kimi davranır. 
     console.log(element.nodeType);
-})
+});
+
+// Example 2 
+console.log(node.firstChild); // Burda da eynən nodeList məntiqidir. 
+console.log(node.firstElementChild); // Amma burda hər hansı sətir sayılmır və normal şəkildə ilk element ekrana çıxır.
+
+// first olduğu üçün last da var :)
+console.log(node.lastChild);
+console.log(node.lastElementChild);
