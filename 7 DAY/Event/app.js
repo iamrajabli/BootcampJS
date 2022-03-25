@@ -36,8 +36,22 @@ function mouseenter(e) {
 }
 
 // Example 6 - mouseout [üstündən çəkdikdə]
-document.querySelector('h1').addEventListener('mouseout', mouseenter);
+document.querySelector('h1').addEventListener('mouseout', mouseout);
 
 function mouseout(e) {
+    console.log(e.target);
+}
+
+// Example 7 - mouseover [üstünə gəldikdə]
+document.querySelector('h1').addEventListener('mouseover', mouseover);
+
+function mouseover(e) {
+    console.log(e.target);
+}
+
+// Example 8 - mouseleave [üstünə gəldikdə]
+document.querySelector('h1').addEventListener('mouseleave', mouseleave);
+
+function mouseleave(e) {
     console.log(e.target);
 }
