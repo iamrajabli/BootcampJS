@@ -1,11 +1,3 @@
-body {
-    width: 100vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-20%, 0);
-}
-
 .colorBlack {
     color: black;
 }
