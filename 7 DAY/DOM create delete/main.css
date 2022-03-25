@@ -1,0 +1,21 @@
+body {
+    width: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-20%, 0);
+}
+
+.colorBlack {
+    color: black;
+}
+
+.resetA {
+    text-decoration: none;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: antiquewhite;
+}
