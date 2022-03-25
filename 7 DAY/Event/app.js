@@ -27,3 +27,10 @@ document.querySelector('h1').addEventListener('mouseup', mouseup);
 function mouseup(e) {
     console.log(e.target);
 }
+
+// Example 5 - mouseenter [üstünə gəldikdə]
+document.querySelector('h1').addEventListener('mouseenter', mouseenter);
+
+function mouseenter(e) {
+    console.log(e.target);
+}
