@@ -20,3 +20,10 @@ document.querySelector('h1').addEventListener('mousedown', mousedown);
 function mousedown(e) {
     console.log(e.target);
 }
+
+// Example 4 - mouseup [basıb buraxdıqda]
+document.querySelector('h1').addEventListener('mouseup', mouseup);
+
+function mouseup(e) {
+    console.log(e.target);
+}
