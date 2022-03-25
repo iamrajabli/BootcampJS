@@ -34,3 +34,10 @@ document.querySelector('h1').addEventListener('mouseenter', mouseenter);
 function mouseenter(e) {
     console.log(e.target);
 }
+
+// Example 6 - mouseout [üstündən çəkdikdə]
+document.querySelector('h1').addEventListener('mouseout', mouseenter);
+
+function mouseout(e) {
+    console.log(e.target);
+}
