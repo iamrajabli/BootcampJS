@@ -14,3 +14,7 @@ const h1 = document.createElement('h1');
 h1.classList = 'colorBlack resetA btn';
 h1.textContent = 'My GitHub Profile';
 document.body.replaceChild(h1, a);
+
+// ELement silinməsi - remove
+// Example 3
+h1.remove();
