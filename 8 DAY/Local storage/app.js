@@ -14,3 +14,28 @@ console.log(JSON.parse(localStorage.getItem('newLocal'))); // Məlumatı çağı
 localStorage.setItem('oldLocal', JSON.stringify(['Old local!'])); // Məlumat daxil etmə
 localStorage.removeItem('oldLocal'); // seçilən localı silir
 localStorage.clear(); // bütün localı seçir
+
+// Example 3 - task
+
+const input = document.querySelector('input');
+const button = document.querySelector('button');
+
+button.addEventListener('click', () => {
+
+    if (input.value === '') {
+        alert('Empty!');
+        return;
+    }
+    let inputArr;
+    if (localStorage.getItem('input') === null) {
+        inputArr = [];
+    } else {
+        inputArr = JSON.parse(localStorage.getItem('input'));
+    }
+
+    inputArr.push(input.value);
+    localStorage.setItem('input', JSON.stringify(inputArr));
+
+    input.value = '';
+
+})
