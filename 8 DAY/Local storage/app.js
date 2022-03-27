@@ -7,3 +7,10 @@ console.log(JSON.parse(localStorage.getItem('newLocal'))); // Məlumatı çağı
 
 // JSON.stringify - yazılan məlumatı olduğu kimi locala göndərir.
 // JSON.parse - JSON.stringify ilə əlavə edilən məlumatı olduğu kimi çağırır.
+
+
+// Example 2 - removeItem / clear();
+
+localStorage.setItem('oldLocal', JSON.stringify(['Old local!'])); // Məlumat daxil etmə
+localStorage.removeItem('oldLocal'); // seçilən localı silir
+localStorage.clear(); // bütün localı seçir
