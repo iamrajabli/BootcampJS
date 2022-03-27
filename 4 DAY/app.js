@@ -1,3 +1,4 @@
+'use strict';
 // UI vars
 const form = document.querySelector('form');
 const input = document.querySelector('#txtTaskName');

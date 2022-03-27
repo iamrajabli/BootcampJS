@@ -1,3 +1,4 @@
+'use strict';
 // Local storage
 // Local storage'in session storage'dən fərqi - Locala əlavə edilən məlumatı sadəcə əllə silmək olar amma sessiona əlavə edilən məlumat brauzer bağlandıqda öz özünə silinir.
 // Example 1 - setItem | getItem
