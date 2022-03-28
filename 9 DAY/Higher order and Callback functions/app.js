@@ -56,3 +56,19 @@ process(arrSecond, ikiVur);
 process(arrSecond, ikiBol);
 process(arrSecond, beshGel);
 process(arrSecond, ucCix);
+
+
+// Example 3
+
+const callback = function(message) {
+    console.log(message);
+}
+
+
+const person = function(ad, soyad, callback) {
+    const message = `Salam ${ad} ${soyad}!`;
+    callback(message);
+}
+
+
+person('Hikmat', 'Rajabli', callback)
