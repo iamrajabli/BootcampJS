@@ -20,3 +20,17 @@ function forEachAlgoritm(arrAlgoritm) {
 }
 forEachAlgoritm(arrAlgoritm);
 console.log("***************");
+
+
+// Example 3 - Algoritmdə callback istifadəsi
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function myForEach(arr, callback) { // funksiyanı parametr olaraq daxil etdik
+    for (let i = 0; i < arr.length; i++) {
+        callback(arr[i], i); // funksiyanın parametrinə məlumatları göndərdik
+    }
+}
+
+myForEach(arr, function(item, index) { // callback parametrinin funkasiyasını yazdıq
+    console.log(item, index);
+});
