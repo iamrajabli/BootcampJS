@@ -21,3 +21,20 @@ const arrNewEx2 = arrEx2.map(function(arr) {
 });
 
 console.log(arrNewEx2);
+
+// Example 3 - öz map metodumuz
+const arrEx3 = [1, 2, 3, 4];
+
+function myMapFunc(arr, process) {
+    let arrNewEx3 = [];
+    for (let i = 0; i < arr.length; i++) {
+        // arrNewEx3.push(process(arr[i])); // push ilə
+        arrNewEx3[i] = process(arr[i]); // push'u da özümüz yazaq :D
+    }
+
+    console.log(arrNewEx3);
+}
+
+myMapFunc(arrEx3, function(int) {
+    return int * 5;
+})
