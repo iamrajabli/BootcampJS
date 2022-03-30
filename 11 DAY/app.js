@@ -23,3 +23,11 @@ function meyveEx1(arr) {
 meyveEx1(bitkiler);
 
 console.log("************");
+
+// Example 2
+// Filter istifadəsi
+bitkiler.filter(function(arr) {
+    if (arr.nov === 'meyve') {
+        console.log(arr);
+    }
+})
