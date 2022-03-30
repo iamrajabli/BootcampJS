@@ -30,4 +30,23 @@ bitkiler.filter(function(arr) {
     if (arr.nov === 'meyve') {
         console.log(arr);
     }
-})
+});
+
+// Example 3
+// Callback ilə yazılışı
+function novAxtar(arr, callback) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        const result = callback(arr[i]);
+        if (result) {
+            newArr.push(arr[i])
+        }
+    }
+    console.log(newArr);
+}
+
+function meyveTap(arr) {
+    return arr.nov === 'meyve';
+}
+
+novAxtar(bitkiler, meyveTap);
