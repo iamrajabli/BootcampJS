@@ -23,7 +23,6 @@ let settings = {
     duration: '1000',
     random: false
 }
-let interval;
 
 document.querySelector('.fa-arrow-circle-right').addEventListener('click', function() {
     index++;
