@@ -79,3 +79,5 @@ function init(settings) {
 }
 
 init(settings);
+
+// Completed!
