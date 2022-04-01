@@ -62,6 +62,10 @@ function init(settings) {
 
             showSlider(index);
 
+        } else {
+            index++;
+            showSlider(index)
+            console.log(index);
         }
     }, settings.duration);
 
