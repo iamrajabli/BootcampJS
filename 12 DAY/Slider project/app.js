@@ -19,19 +19,22 @@ let models = [{
 
 let sliderLength = models.length;
 let index = 2;
+let settings = {
+    duration: '1000',
+    random: false
+}
+let interval;
 
 document.querySelector('.fa-arrow-circle-right').addEventListener('click', function() {
     index++;
     showSlider(index);
-    console.log(index);
-
 });
 
 document.querySelector('.fa-arrow-circle-left').addEventListener('click', function() {
     index--;
     showSlider(index);
-
 });
+
 
 function showSlider(i) {
     index = i;
@@ -46,3 +49,22 @@ function showSlider(i) {
     document.querySelector('.card-img-top').setAttribute('src', models[index].image);
     document.querySelector('.card-title').textContent = models[index].name;
 }
+
+function init(settings) {
+    let prev;
+    interval = setInterval(function() {
+        if (settings.random) {
+            // Random rəqəm və təkrarlanmama kontrolu
+            prev = index;
+            do {
+                index = Math.floor(Math.random() * sliderLength);
+            } while (index == prev);
+
+            showSlider(index);
+
+        }
+    }, settings.duration);
+
+}
+
+init(settings);
