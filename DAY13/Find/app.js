@@ -12,7 +12,7 @@ const ex1 = arr.find(function(item) {
     return item.id === 1;
 });
 console.log(ex1);
-console.log("*******");
+console.log("********");
 
 // Example 2
 function myArrEx2(arr) {
@@ -23,7 +23,7 @@ function myArrEx2(arr) {
     }
 }
 myArrEx2(arr);
-console.log("*******");
+console.log("********");
 
 
 
