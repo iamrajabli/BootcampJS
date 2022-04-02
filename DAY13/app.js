@@ -13,3 +13,13 @@ const ex1 = arr.find(function(item) {
 });
 console.log(ex1);
 console.log("*******");
+
+// Example 2
+function myArrEx2(arr) {
+    for (let newArr in arr) {
+        if (arr[newArr].id === 1) {
+            console.log(arr[newArr]);
+        }
+    }
+}
+myArrEx2(arr)
