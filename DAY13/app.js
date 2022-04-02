@@ -22,4 +22,21 @@ function myArrEx2(arr) {
         }
     }
 }
-myArrEx2(arr)
+myArrEx2(arr);
+console.log("*******");
+
+
+
+// Example 3 - callback istifadəsi
+function myArrEx3(_arr, _callback) {
+    for (let index in _arr) {
+        const result = _callback(_arr[index]);
+        if (result) {
+            console.log(_arr[index]);
+        }
+    }
+}
+
+myArrEx3(arr, function(_arr) {
+    return _arr.id === 3;
+});
