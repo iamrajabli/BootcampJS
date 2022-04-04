@@ -3,7 +3,7 @@
 // Example 1
 
 // Object literal
-const person = {
+const hikmat = {
     ad: 'Hikmat',
     soyad: 'Rajabli',
     av: 'subay',
@@ -24,8 +24,40 @@ const person = {
     'full-name': 'Hikmat Rajabli' // - var isə '' içində yazılmalıdır.
 };
 
-console.log(person["full-name"]);
-console.log(person.hobbi[2]);
-console.log(person.oxuduguYer());
-console.log(person.qisaInfo());
-console.log("***********");
+function logsForEx1() {
+    console.log(hikmat["full-name"]);
+    console.log(hikmat.hobbi[2]);
+    console.log(hikmat.oxuduguYer());
+    console.log(hikmat.qisaInfo());
+    console.log("***********");
+};
+
+logsForEx1();
+
+// Example 1'də hərşey normaldı amma əgər biz 1 person deyildə 500 person əlavə etmək istəsək? Onda deməli bir obyekt üçün 20 sətir kod yazdıqsa 500 üçün də 500*20 yazmalıyıq? Həm də bu qədər kod təkrarı? 
+
+// DRY - Don't repeat yourself!
+
+// Example 2 - factorial functions
+function students(ad, soyad, yas, hobbi, universitet) {
+    return {
+        isim: ad,
+        soyad: soyad,
+        yas: yas,
+        hobbi: hobbi,
+        universitet: universitet,
+
+        ozunuTanit: function() {
+            return `Salam! Mənim adim ${this.isim}, ${this.yas} yashim var`;
+        }
+    }
+
+}
+
+// Faktoriyal funksiya sayəsində istədiyimiz qədər person istehsal edə bilərik. Bu funksiyanı zavod kimi fikirləşə bilərik
+function logsForEx2() {
+    const amin = students('Amin', 'Farajov', 28, ['kitab', 'velosiped'], 'ATU');
+    console.log(amin.ozunuTanit());
+    console.log("***********");
+}
+logsForEx2();
