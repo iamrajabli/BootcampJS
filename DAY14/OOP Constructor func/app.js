@@ -38,3 +38,13 @@ function logsForEx2() {
     console.log(newObj.constructor);
     console.log("********");
 }
+
+// Example 3
+// Beləliklə aydın olur ki, hikmat.constructor = Person olduğu üçün, yəni hikmat obyektinin istehsalçısı Person zavodu olduğu üçün Person əvəzinə hikmat.constructor yazaraq yeni bir obyekt yaratmaq olur.
+const randomGuy = new hikmat.constructor('Random', 'Randomov', 85);
+
+function logsForEx2() {
+    console.log(randomGuy);
+    console.log(randomGuy.dogumIli());
+    console.log("********");
+}
