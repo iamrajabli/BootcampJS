@@ -23,3 +23,18 @@ function logsForEx1() {
     console.log(ali.dogumIli());
     console.log("********");
 }
+
+
+// Example 2
+// Hər bir obyekt onu yaradan konstruktor funksiyasını çağıra bilər. 
+const newArr = [];
+const newFunc = function() {};
+const newObj = {};
+
+// Buradan da bəlli olur ki əslində array və funksiya da bir obyektdir.
+function logsForEx2() {
+    console.log(newArr.constructor);
+    console.log(newFunc.constructor);
+    console.log(newObj.constructor);
+    console.log("********");
+}
