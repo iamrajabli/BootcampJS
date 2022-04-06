@@ -100,7 +100,7 @@ console.log(x2);
 console.log(x3);
 console.log("**********");
 
-// Example 5 - map metodunu prototipsiz yazaq
+// Example 5 - map metodunu prototipsiz ozel konstruktor ucun yazaq
 function PersonForEx5(ad, soyad, hobbi) {
     this.ad = ad;
     this.soyad = soyad;
@@ -116,10 +116,47 @@ function PersonForEx5(ad, soyad, hobbi) {
 }
 
 const hikmatForEx5 = new PersonForEx5('Hikmat', 'Rajabli', ['kitab', 'kod', 'boks']);
+const aliForEx5 = new PersonForEx5('Ali', 'Rajabli', ['dis', 'tibb', 'trade']);
 
-let myNewArrForEx5 = hikmatForEx5.hobbiSort(function(item) {
+let hikmatForEx5_2 = hikmatForEx5.hobbiSort(function(item) {
     return `hobbi: ${item}`;
 });
 
-console.log(myNewArrForEx5);
-console.log("**********");
+let aliForEx5_2 = aliForEx5.hobbiSort(function(item) {
+    return `AlininHobbisi: ${item}`;
+});
+
+
+function logsForEx5() {
+    console.log(hikmatForEx5_2);
+    console.log(aliForEx5_2);
+    console.log("**********");
+}
+
+
+// Example 6 - map metodunu prototiple ozel konstruktor ucun yazaq
+
+function PersonForEx6(ad, soyad, hobbi) {
+    this.ad = ad;
+    this.soyad = soyad;
+    this.hobbi = hobbi;
+}
+
+PersonForEx6.prototype.hobbiSort = function(callback) {
+    let myNewArr = [];
+    for (let i = 0; i < this.hobbi.length; i++) {
+        myNewArr.push(callback(this.hobbi[i]));
+    }
+    return myNewArr;
+}
+
+const hikmatForEx6 = new PersonForEx6('Hikmat', 'Rajabli', ['kitab', 'kod', 'boks']);
+
+let hikmatForEx6_2 = hikmatForEx6.hobbiSort(function(item) {
+    return `hobbi: ${item}`;
+});
+
+function logsForEx6() {
+    console.log(hikmatForEx6_2);
+    console.log("**********");
+}
