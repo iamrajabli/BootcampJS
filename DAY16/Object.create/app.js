@@ -70,4 +70,32 @@ function logsForEx3() {
     console.log(hikmatForEx3.qisaBilgi());
     console.log("**********");
 }
-logsForEx3();
+
+// Example 4 - Prototype sayəsində Array a öz metodumuzu (map) artıraq.
+const ArrFor4 = [1, 2, 3, 4];
+const myNewArr = ArrFor4.map(items => {
+    return items + 2;
+});
+
+console.log(myNewArr);
+console.log("**********");
+
+Array.prototype.myMapMethod = function(callback) {
+    let newArr = [];
+    for (let i = 0; i < this.length; i++) {
+        newArr.push(callback(this[i]));
+    }
+    return newArr;
+}
+
+let x2 = ArrFor4.myMapMethod(item => {
+    return item * 2;
+});
+
+let x3 = ArrFor4.myMapMethod(item => {
+    return item * 3;
+});
+
+console.log(x2);
+console.log(x3);
+console.log("**********");
