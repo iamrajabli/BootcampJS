@@ -99,3 +99,27 @@ let x3 = ArrFor4.myMapMethod(item => {
 console.log(x2);
 console.log(x3);
 console.log("**********");
+
+// Example 5 - map metodunu prototipsiz yazaq
+function PersonForEx5(ad, soyad, hobbi) {
+    this.ad = ad;
+    this.soyad = soyad;
+    this.hobbi = hobbi;
+
+    this.hobbiSort = function(callback) {
+        let myNewArr = [];
+        for (let i = 0; i < this.hobbi.length; i++) {
+            myNewArr.push(callback(this.hobbi[i]));
+        }
+        return myNewArr;
+    }
+}
+
+const hikmatForEx5 = new PersonForEx5('Hikmat', 'Rajabli', ['kitab', 'kod', 'boks']);
+
+let myNewArrForEx5 = hikmatForEx5.hobbiSort(function(item) {
+    return `hobbi: ${item}`;
+});
+
+console.log(myNewArrForEx5);
+console.log("**********");
