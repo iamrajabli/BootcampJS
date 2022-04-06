@@ -42,4 +42,32 @@ function logsForEx2() {
     console.log(hikmatForEx2);
     console.log("**********");
 }
-logsForEx2()
+
+
+// Example 3 - object.create
+function PersonForEx3(ad, soyad) {
+    this.ad = ad;
+    this.soyad = soyad;
+}
+
+// Bu prototipi StudentsForEx3 üçün də tətbiq etmək üçün object.create metodundan istifadə etmək lazımdır.
+PersonForEx3.prototype.qisaBilgi = function() {
+    return `Salam, mənim adım: ${this.ad}'dir`;
+}
+
+function StudentsForEx3(ad, soyad, yas, univer) {
+    PersonForEx3.call(this, ad, soyad); // call metodu sayəsində Person qurucu funksiyasından ad və soyadı çağırdıq. 
+    this.yas = yas;
+    this.univer = univer;
+}
+
+StudentsForEx3.prototype = Object.create(PersonForEx3.prototype); // Eyni prototipə sahib oldular. StudentsForEx3.prototype = PersonForEx3.prototype
+
+const hikmatForEx3 = new StudentsForEx3('Hikmat', 'Rajabli', 22, 'KHNUVD');
+
+function logsForEx3() {
+    console.log(hikmatForEx3);
+    console.log(hikmatForEx3.qisaBilgi());
+    console.log("**********");
+}
+logsForEx3();
