@@ -10,7 +10,7 @@ class PersonForEx1 {
         this.yas = yas;
     }
 
-    dogumTarixi = function() { // prototip
+    dogumTarixi() { // prototip
         return 2022 - this.yas
     }
 };
@@ -31,7 +31,7 @@ class StudentsForEx2 extends PersonForEx1 {
         this.sinif = sinif;
     }
 
-    dogumTarixi = function() { // prototip (parentden gelen prototipi ezdim)
+    dogumTarixi() { // prototip (parentden gelen prototipi ezdim)
         return 2021 - this.yas
     }
 }
@@ -43,3 +43,4 @@ function logsForEx1() {
     console.log(ramin.dogumTarixi());
     console.log("************");
 };
+logsForEx1()
