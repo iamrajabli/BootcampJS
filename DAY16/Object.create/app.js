@@ -62,6 +62,7 @@ function StudentsForEx3(ad, soyad, yas, univer) {
 }
 
 StudentsForEx3.prototype = Object.create(PersonForEx3.prototype); // Eyni prototipə sahib oldular. StudentsForEx3.prototype = PersonForEx3.prototype
+StudentsForEx3.prototype.constructor = StudentsForEx3; // əgər bunu yazmasaq studentsForEx3 PersonFor3 olacaqdi. Bu da o demekdirki studentsForEx3 den yaradilan obyektlerin konstruktoru PersonForEx3 sayilacaqdi. 
 
 const hikmatForEx3 = new StudentsForEx3('Hikmat', 'Rajabli', 22, 'KHNUVD');
 
@@ -70,6 +71,8 @@ function logsForEx3() {
     console.log(hikmatForEx3.qisaBilgi());
     console.log("**********");
 }
+
+logsForEx3()
 
 // Example 4 - Prototype sayəsində Array a öz metodumuzu (map) artıraq.
 const ArrFor4 = [1, 2, 3, 4];
