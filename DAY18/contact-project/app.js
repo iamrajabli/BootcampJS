@@ -20,6 +20,7 @@ function insert(e) {
 
     if (result.result) {
         resultInfo(result.result, result.message);
+        empty();
     } else {
         resultInfo(result.result, result.message);
     }
@@ -48,4 +49,14 @@ function resultInfo(result, message) {
     createdDiv.className = 'info';
     createdDiv.classList.add(result ? 'info--success' : 'info--error');
     document.querySelector('.container').insertBefore(createdDiv, form__contact);
-}
+
+    setTimeout(function() {
+        createdDiv.remove();
+    }, 2000)
+};
+
+function empty() {
+    name.value = '';
+    surname.value = '';
+    email.value = '';
+};
