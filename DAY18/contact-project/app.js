@@ -5,12 +5,12 @@ const surname = document.getElementById('surname');
 const email = document.getElementById('email');
 const form__contact = document.getElementById('form__contact');
 const tbody__contact = document.querySelector('.tbody__contact');
-const allPerson = [];
 const submit__btn = document.getElementById('submit__btn');
 
 let btnStatus = undefined;
 form__contact.addEventListener('submit', insert);
 tbody__contact.addEventListener('click', editAndDelete);
+const allPerson = [];
 
 function insert(e) {
     e.preventDefault();
