@@ -24,7 +24,7 @@ function logsForEx1() {
 };
 
 // Example 2 - extends, super (call)
-class StudentsForEx2 extends PersonForEx1 {
+class StudentsForEx2 extends PersonForEx1 { // StudentsForEx2 - sublcass, PersonForEx1 - superclass
     constructor(ad, soyad, yas, sinif) {
         super(ad, soyad, yas);
         this.sinif = sinif;
