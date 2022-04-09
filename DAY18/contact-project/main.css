@@ -32,10 +32,10 @@
     color: black;
 }
 
-.info-success {
+.info--success {
     border: 1px solid green;
 }
 
-.info-error {
+.info--error {
     border: 1px solid red;
 }
