@@ -7,6 +7,28 @@ const form__contact = document.getElementById('form__contact');
 const tbody__contact = document.querySelector('.tbody__contact');
 const allPerson = [];
 form__contact.addEventListener('submit', insert);
+tbody__contact.addEventListener('click', editAndDelete);
+
+function editAndDelete(e) {
+    const deletedTr = e.target.parentElement.parentElement;
+    const deletedEmail = e.target.parentElement.previousElementSibling.textContent;
+    if (e.target.classList.contains('btn--edit')) {
+        console.log('edit');
+    } else if (e.target.classList.contains('btn--delete')) {
+        deleteElement(deletedTr, deletedEmail);
+        console.log(allPerson);
+    }
+}
+
+function deleteElement(deletedTr, deletedEmail) {
+    deletedTr.remove();
+
+    for (let i in allPerson) {
+        if (allPerson[i].email === deletedEmail) {
+            allPerson.splice(i, 1);
+        }
+    }
+}
 
 function insert(e) {
     e.preventDefault();
