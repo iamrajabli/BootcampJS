@@ -25,3 +25,19 @@ function insert(e) {
     }
 
 };
+
+function controlOfData(person) {
+    for (let i in person) {
+        if (person[i]) {
+            return {
+                result: true,
+                message: 'Successfuly!'
+            }
+        } else {
+            return {
+                result: false,
+                message: 'Required field!'
+            }
+        }
+    }
+};
