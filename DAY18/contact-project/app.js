@@ -41,3 +41,11 @@ function controlOfData(person) {
         }
     }
 };
+
+function resultInfo(result, message) {
+    const createdDiv = document.createElement('div');
+    createdDiv.textContent = message;
+    createdDiv.className = 'info';
+    createdDiv.classList.add(result ? 'info--success' : 'info--error');
+    document.querySelector('.container').insertBefore(createdDiv, form__contact);
+}
