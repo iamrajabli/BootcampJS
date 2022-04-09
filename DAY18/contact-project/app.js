@@ -6,29 +6,11 @@ const email = document.getElementById('email');
 const form__contact = document.getElementById('form__contact');
 const tbody__contact = document.querySelector('.tbody__contact');
 const allPerson = [];
+const submit__btn = document.getElementById('submit__btn');
+
+let btnStatus = undefined;
 form__contact.addEventListener('submit', insert);
 tbody__contact.addEventListener('click', editAndDelete);
-
-function editAndDelete(e) {
-    const deletedTr = e.target.parentElement.parentElement;
-    const deletedEmail = e.target.parentElement.previousElementSibling.textContent;
-    if (e.target.classList.contains('btn--edit')) {
-        console.log('edit');
-    } else if (e.target.classList.contains('btn--delete')) {
-        deleteElement(deletedTr, deletedEmail);
-        console.log(allPerson);
-    }
-}
-
-function deleteElement(deletedTr, deletedEmail) {
-    deletedTr.remove();
-
-    for (let i in allPerson) {
-        if (allPerson[i].email === deletedEmail) {
-            allPerson.splice(i, 1);
-        }
-    }
-}
 
 function insert(e) {
     e.preventDefault();
@@ -42,10 +24,16 @@ function insert(e) {
     const result = controlOfData(addedPerson);
 
     if (result.result) {
-        resultInfo(result.result, result.message);
-        addPerson(addedPerson);
-        allPerson.push(addedPerson);
-        empty();
+        if (btnStatus) {
+            resultInfo(result.result, result.message);
+            updatePerson(addedPerson, btnStatus.cells[2].textContent);
+            empty();
+        } else {
+            resultInfo(result.result, result.message);
+            addPerson(addedPerson);
+            allPerson.push(addedPerson);
+            empty();
+        }
     } else {
         resultInfo(result.result, result.message);
     }
@@ -80,10 +68,20 @@ function resultInfo(result, message) {
     }, 2000)
 };
 
-function empty() {
-    name.value = '';
-    surname.value = '';
-    email.value = '';
+function editAndDelete(e) {
+    const thatTr = e.target.parentElement.parentElement;
+    const thatEmail = e.target.parentElement.previousElementSibling;
+    if (e.target.classList.contains('btn--edit')) {
+        submit__btn.className = 'btn--danger u-full-width';
+        submit__btn.value = 'Edit';
+        name.value = thatTr.cells[0].textContent
+        surname.value = thatTr.cells[1].textContent
+        email.value = thatTr.cells[2].textContent
+        btnStatus = thatTr;
+
+    } else if (e.target.classList.contains('btn--delete')) {
+        deleteElement(thatTr, thatEmail.textContent);
+    }
 };
 
 function addPerson(person) {
@@ -98,4 +96,38 @@ function addPerson(person) {
     </td>               
     `;
     tbody__contact.appendChild(createdTr);
-}
+};
+
+function updatePerson(person, personEmail) {
+
+    for (let i in allPerson) {
+        if (allPerson[i].email === personEmail) {
+            allPerson[i] = person;
+        }
+    }
+
+    btnStatus.cells[0].textContent = person.name;
+    btnStatus.cells[1].textContent = person.surname;
+    btnStatus.cells[2].textContent = person.email;
+
+    submit__btn.className = 'button-primary u-full-width';
+    submit__btn.value = 'Enter';
+    console.log(allPerson);
+};
+
+function deleteElement(deletedTr, deletedEmail) {
+    deletedTr.remove();
+
+    for (let i in allPerson) {
+        if (allPerson[i].email === deletedEmail) {
+            allPerson.splice(i, 1);
+        }
+    }
+
+};
+
+function empty() {
+    name.value = '';
+    surname.value = '';
+    email.value = '';
+};

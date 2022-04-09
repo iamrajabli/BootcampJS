@@ -3,6 +3,12 @@
     transition: all 100ms linear;
 }
 
+.btn--danger {
+    background-color: red !important;
+    color: white !important;
+    border: none !important;
+}
+
 .btn--delete {
     color: red;
     border: 1px solid red;
