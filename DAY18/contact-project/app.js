@@ -4,7 +4,8 @@ const name = document.getElementById('name');
 const surname = document.getElementById('surname');
 const email = document.getElementById('email');
 const form__contact = document.getElementById('form__contact');
-
+const tbody__contact = document.querySelector('.tbody__contact');
+const allPerson = [];
 form__contact.addEventListener('submit', insert);
 
 function insert(e) {
@@ -20,6 +21,8 @@ function insert(e) {
 
     if (result.result) {
         resultInfo(result.result, result.message);
+        addPerson(addedPerson);
+        allPerson.push(addedPerson);
         empty();
     } else {
         resultInfo(result.result, result.message);
@@ -60,3 +63,17 @@ function empty() {
     surname.value = '';
     email.value = '';
 };
+
+function addPerson(person) {
+    const createdTr = document.createElement('tr');
+    createdTr.innerHTML = `
+    <td>${person.name}</td>
+    <td>${person.surname}</td>
+    <td>${person.email}</td>
+    <td>
+        <button class="btn btn--delete"><i class="fa-solid fa-trash-can"></i></button>
+        <button class="btn btn--edit"><i class="fa-solid fa-pen-to-square"></i></button>
+    </td>               
+    `;
+    tbody__contact.appendChild(createdTr);
+}
