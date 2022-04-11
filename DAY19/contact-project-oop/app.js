@@ -9,13 +9,40 @@ class Person {
     }
 };
 
+class controlInputs {
+    static controlForEmpty(...personInfo) {
+        let result = true;
+        personInfo.forEach(element => {
+            if (element < 1) {
+                result = false;
+                return result
+            }
+        });
+
+        return result;
+    }
+}
+
 class Screen {
     constructor() {
         this.name = document.getElementById('name');
         this.surname = document.getElementById('surname');
         this.email = document.getElementById('email');
         this.submit__btn = document.getElementById('submit__btn');
-        this.getAllData = new DB();
+        this.form = document.getElementById('form__contact').addEventListener('submit', this.addOrUpdate);
+        // this.getAllData = new DB();
+    };
+
+    addOrUpdate(e) {
+        e.preventDefault();
+        const person = new Person(this.name.value, this.surname.value, this.email.value);
+        const result = controlInputs.controlForEmpty(person.ad, person.surname, person.email);
+
+        if (result) {
+            console.log(true);
+        } else {
+            console.log(false);
+        }
     }
 }
 
@@ -39,5 +66,7 @@ class DB {
     }
 };
 
-let tas = new DB();
-console.log(tas.setDBMeth('salam'));
+
+document.addEventListener('DOMContentLoaded', function() {
+    new Screen();
+})
