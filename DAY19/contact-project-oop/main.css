@@ -1,0 +1,47 @@
+.btn {
+    outline: none !important;
+    transition: all 100ms linear;
+}
+
+.btn--danger {
+    background-color: red !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn--delete {
+    color: red;
+    border: 1px solid red;
+}
+
+.btn--delete:hover {
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+}
+
+.btn--edit {
+    color: green;
+    border: 1px solid green;
+}
+
+.btn--edit:hover {
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+}
+
+.info {
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0;
+    color: black;
+}
+
+.info--success {
+    border: 1px solid green;
+}
+
+.info--error {
+    border: 1px solid red;
+}
