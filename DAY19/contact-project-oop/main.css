@@ -45,3 +45,7 @@
 .info--error {
     border: 1px solid red;
 }
+
+.fa-solid {
+    pointer-events: none;
+}

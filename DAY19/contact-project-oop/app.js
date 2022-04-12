@@ -79,12 +79,11 @@ class Screen {
 
     deleteOrUpdate(e) {
         const thatTR = e.target.parentElement.parentElement;
-        const thatEmail = thatTR.cells[2].textContent;
-        console.log(thatEmail);
-        if (e.target.classList.contains('btn--delete')) {
-            thatTR.remove();
-            this.getAllData.deleteFromLs(thatEmail)
 
+        if (e.target.classList.contains('btn--delete')) {
+            const thatEmail = thatTR.children[2].textContent
+            this.getAllData.deleteFromLs(thatEmail);
+            thatTR.remove();
         }
     }
 
@@ -96,20 +95,16 @@ class DB {
     };
 
     deleteFromLs(personEmail) {
-        // for (let i in this.getDB) {
-        //     if (this.getDB[i].email === personEmail) {
-        //         this.getDB.splice(i, 1);
-        //         localStorage.setItem('allPerson', JSON.stringify(this.getDB));
-        //     }
-        // }
-
-        this.getDB.forEach((element, index) => {
-            if (element.email === personEmail) {
-                this.getDB = this.getDB.splice(index, 1);
+        for (let i in this.getDB) {
+            if (this.getDB[i].email === personEmail) {
+                this.getDB.splice(i, 1);
+                localStorage.setItem('allPerson', JSON.stringify(this.getDB));
             }
-        });
+        }
 
         localStorage.setItem('allPerson', JSON.stringify(this.getDB));
+
+
     }
     getDBMeth() {
         let allPerson;
