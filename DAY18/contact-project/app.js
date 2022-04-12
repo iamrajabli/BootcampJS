@@ -161,3 +161,18 @@ function deleteFromDB(personEmail) {
     localStorage.setItem('allPerson', JSON.stringify(allPerson));
 
 }
+
+
+function updateFromDB(person, personOldEmail) {
+    let allPerson = getDB();
+
+    for (let i in allPerson) {
+        if (allPerson[i].email === personOldEmail) {
+            allPerson[i].name = person.name;
+            allPerson[i].surname = person.surname;
+            allPerson[i].email = person.email;
+        }
+    }
+
+    localStorage.setItem('allPerson', JSON.stringify(allPerson));
+}
