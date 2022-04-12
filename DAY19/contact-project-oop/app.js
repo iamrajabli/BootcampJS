@@ -34,6 +34,7 @@ class Screen {
         this.tbody__contact.addEventListener('click', this.deleteOrUpdate.bind(this));
         this.getAllData = new DB();
         this.showAllPersonInScreen(this.getAllData.getDB);
+        this.updateStatus = false;
     };
 
 
@@ -68,13 +69,31 @@ class Screen {
         const person = new Person(this.name.value, this.surname.value, this.email.value);
         const result = controlInputs.controlForEmpty(person);
 
-        if (result) {
-            this.addPersonToList(person);
-            this.getAllData.setDBMeth(person);
-            this.resetInputs();
+        if (!this.updateStatus) {
+
+            if (result) {
+                this.addPersonToList(person);
+                this.getAllData.setDBMeth(person);
+                this.resetInputs();
+            } else {
+                console.log(false);
+            }
         } else {
-            console.log(false);
+            this.updatePerson(person);
+
         }
+    }
+
+    updatePerson(person) {
+        this.getAllData.updateFromLs(person, this.updateStatus.cells[2].textContent);
+        this.updateStatus.cells[0].textContent = person.name;
+        this.updateStatus.cells[1].textContent = person.surname;
+        this.updateStatus.cells[2].textContent = person.email;
+        this.resetInputs();
+        this.updateStatus = false;
+        this.submit__btn.className = 'button-primary u-full-width';
+        this.submit__btn.value = 'Enter';
+
     }
 
     deleteOrUpdate(e) {
@@ -84,6 +103,14 @@ class Screen {
             const thatEmail = thatTR.children[2].textContent
             this.getAllData.deleteFromLs(thatEmail);
             thatTR.remove();
+        } else if (e.target.classList.contains('btn--edit')) {
+            this.submit__btn.className = 'btn--danger u-full-width';
+            this.submit__btn.value = 'Edit';
+            this.updateStatus = thatTR;
+            this.name.value = thatTR.cells[0].textContent;
+            this.surname.value = thatTR.cells[1].textContent;
+            this.email.value = thatTR.cells[2].textContent;
+
         }
     }
 
@@ -94,18 +121,7 @@ class DB {
         this.getDB = this.getDBMeth();
     };
 
-    deleteFromLs(personEmail) {
-        for (let i in this.getDB) {
-            if (this.getDB[i].email === personEmail) {
-                this.getDB.splice(i, 1);
-                localStorage.setItem('allPerson', JSON.stringify(this.getDB));
-            }
-        }
 
-        localStorage.setItem('allPerson', JSON.stringify(this.getDB));
-
-
-    }
     getDBMeth() {
         let allPerson;
         if (localStorage.getItem('allPerson') === null) {
@@ -121,6 +137,28 @@ class DB {
         localStorage.setItem('allPerson', JSON.stringify(this.getDB));
     };
 
+    deleteFromLs(personEmail) {
+        for (let i in this.getDB) {
+            if (this.getDB[i].email === personEmail) {
+                this.getDB.splice(i, 1);
+                localStorage.setItem('allPerson', JSON.stringify(this.getDB));
+            }
+        }
+
+        localStorage.setItem('allPerson', JSON.stringify(this.getDB));
+    }
+
+    updateFromLs(person, personOldEmail) {
+        for (let i in this.getDB) {
+            if (this.getDB[i].email === personOldEmail) {
+                this.getDB[i].name = person.name;
+                this.getDB[i].surname = person.surname;
+                this.getDB[i].email = person.email;
+            }
+        }
+        localStorage.setItem('allPerson', JSON.stringify(this.getDB));
+
+    }
 
 };
 
