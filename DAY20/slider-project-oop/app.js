@@ -67,3 +67,5 @@ class Screen {
 document.addEventListener('DOMContentLoaded', function() {
     new Screen();
 });
+
+// Completed!
