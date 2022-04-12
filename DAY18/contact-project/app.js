@@ -11,6 +11,14 @@ let btnStatus = undefined;
 form__contact.addEventListener('submit', insert);
 tbody__contact.addEventListener('click', editAndDelete);
 const allPerson = [];
+showAllPerson()
+
+function showAllPerson() {
+    let allData = getDB();
+    for (let i in allData) {
+        addPerson(allData[i]);
+    }
+}
 
 function insert(e) {
     e.preventDefault();
@@ -32,6 +40,7 @@ function insert(e) {
             resultInfo(result.result, result.message);
             addPerson(addedPerson);
             allPerson.push(addedPerson);
+            setDB(addedPerson);
             empty();
         }
     } else {
@@ -85,6 +94,7 @@ function editAndDelete(e) {
 };
 
 function addPerson(person) {
+
     const createdTr = document.createElement('tr');
     createdTr.innerHTML = `
     <td>${person.name}</td>
@@ -131,3 +141,21 @@ function empty() {
     surname.value = '';
     email.value = '';
 };
+
+
+function getDB() {
+    let allPerson;
+    if (localStorage.getItem('allPerson') === null) {
+        allPerson = [];
+    } else {
+        allPerson = JSON.parse(localStorage.getItem('allPerson'));
+    }
+
+    return allPerson
+}
+
+function setDB(person) {
+    let allPerson = getDB();
+    allPerson.push(person)
+    localStorage.setItem('allPerson', JSON.stringify(allPerson));
+}
