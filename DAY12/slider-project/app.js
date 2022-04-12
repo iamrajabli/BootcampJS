@@ -52,7 +52,7 @@ function showSlider(i) {
     if (i > sliderLength - 1) {
         index = 0;
     }
-
+    console.log(index);
     document.querySelector('.card-img-top').setAttribute('src', models[index].image);
     document.querySelector('.card-title').textContent = models[index].name;
 }
@@ -72,7 +72,7 @@ function init(settings) {
         } else {
             index++;
             showSlider(index)
-            console.log(index);
+
         }
     }, settings.duration);
 
