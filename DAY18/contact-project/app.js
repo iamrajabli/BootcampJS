@@ -10,7 +10,6 @@ const submit__btn = document.getElementById('submit__btn');
 let btnStatus = undefined;
 form__contact.addEventListener('submit', insert);
 tbody__contact.addEventListener('click', editAndDelete);
-const allPerson = [];
 showAllPerson()
 
 function showAllPerson() {
@@ -39,7 +38,6 @@ function insert(e) {
         } else {
             resultInfo(result.result, result.message);
             addPerson(addedPerson);
-            allPerson.push(addedPerson);
             setDB(addedPerson);
             empty();
         }
@@ -50,19 +48,21 @@ function insert(e) {
 };
 
 function controlOfData(person) {
+
     for (let i in person) {
-        if (person[i]) {
-            return {
-                result: true,
-                message: 'Successfuly!'
-            }
-        } else {
+
+        if (person[i] === '') {
             return {
                 result: false,
                 message: 'Required field!'
             }
         }
     }
+    return {
+        result: true,
+        message: 'Successfuly!'
+    }
+
 };
 
 function resultInfo(result, message) {
@@ -79,7 +79,6 @@ function resultInfo(result, message) {
 
 function editAndDelete(e) {
     const thatTr = e.target.parentElement.parentElement;
-    const thatEmail = e.target.parentElement.previousElementSibling;
     if (e.target.classList.contains('btn--edit')) {
         submit__btn.className = 'btn--danger u-full-width';
         submit__btn.value = 'Edit';
@@ -89,7 +88,10 @@ function editAndDelete(e) {
         btnStatus = thatTr;
 
     } else if (e.target.classList.contains('btn--delete')) {
+        const thatEmail = thatTr.children[2].textContent;
+
         deleteElement(thatTr, thatEmail.textContent);
+        deleteFromDB(thatEmail);
     }
 };
 
@@ -108,31 +110,20 @@ function addPerson(person) {
     tbody__contact.appendChild(createdTr);
 };
 
-function updatePerson(person, personEmail) {
-
-    for (let i in allPerson) {
-        if (allPerson[i].email === personEmail) {
-            allPerson[i] = person;
-        }
-    }
-
+function updatePerson(person) {
+    updateFromDB(person, btnStatus.cells[2].textContent)
     btnStatus.cells[0].textContent = person.name;
     btnStatus.cells[1].textContent = person.surname;
     btnStatus.cells[2].textContent = person.email;
 
     submit__btn.className = 'button-primary u-full-width';
     submit__btn.value = 'Enter';
-    console.log(allPerson);
+
 };
 
 function deleteElement(deletedTr, deletedEmail) {
     deletedTr.remove();
 
-    for (let i in allPerson) {
-        if (allPerson[i].email === deletedEmail) {
-            allPerson.splice(i, 1);
-        }
-    }
 
 };
 
@@ -158,4 +149,15 @@ function setDB(person) {
     let allPerson = getDB();
     allPerson.push(person)
     localStorage.setItem('allPerson', JSON.stringify(allPerson));
+}
+
+function deleteFromDB(personEmail) {
+    let allPerson = getDB();
+    for (let i in allPerson) {
+        if (allPerson[i].email === personEmail) {
+            allPerson.splice(i, 1);
+        }
+    }
+    localStorage.setItem('allPerson', JSON.stringify(allPerson));
+
 }
