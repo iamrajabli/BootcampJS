@@ -16,4 +16,16 @@ welcome.call(hikmat /* ** */ );
 const nail = {
     name: 'Nail'
 }
-welcome.apply(nail)
+welcome.apply(nail);
+
+// bind istifadesi
+// Example 3
+// bind yeni kohne funksiyani referans alaraq yeni funskiya yaradir
+
+const newHikamt = welcome.bind(hikmat);
+newHikamt();
+
+// Example 4 - call ve apply ferqi
+let welcome_2 = function(age) {
+    console.log(`Welcome ${this.name}, are you ${age} old?`);
+}
