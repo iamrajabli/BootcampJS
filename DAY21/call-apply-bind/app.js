@@ -40,3 +40,8 @@ welcome_2.call(hikmat, 22);
 welcome_2.apply(hikmat, [22])
 
 // Netice: apply ile parametr istifade ederken mutleq massiv formasinda parametr daxil etmek lazimdir.
+
+// Example 4_3
+// bind ile parametr istifadesi
+const newNail = welcome_2.bind(nail);
+newNail(22);
