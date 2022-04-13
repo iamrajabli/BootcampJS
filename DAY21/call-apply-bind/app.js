@@ -65,3 +65,20 @@ const num = {
 
 
 console.log(num.controlOfNum(100));
+
+// Example 5_2 call yazilis
+
+const num_1 = {
+    min: 0,
+    max: 100,
+}
+
+function controlOfNum(value) {
+    if (typeof value !== 'number') {
+        return false;
+    } else {
+        return value >= this.min && value <= this.max
+    }
+}
+
+console.log(controlOfNum.call(num_1, 130));
