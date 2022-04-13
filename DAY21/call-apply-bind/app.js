@@ -29,3 +29,7 @@ newHikamt();
 let welcome_2 = function(age) {
     console.log(`Welcome ${this.name}, are you ${age} old?`);
 }
+
+// Example 4_1
+// call ile parametr istifadesi
+welcome_2.call(hikmat, 22);
