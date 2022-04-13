@@ -8,3 +8,12 @@ const hikmat = {
 }
 welcome.call(hikmat /* ** */ );
 // hikmat ** funksiyadaki this'e beraber oldu.
+
+// apply istifadesi
+// Example 2
+// Eger funksiya parametr almirsa apply call'in etdiyini edir. 
+
+const nail = {
+    name: 'Nail'
+}
+welcome.apply(nail)
