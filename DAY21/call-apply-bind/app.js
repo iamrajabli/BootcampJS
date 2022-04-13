@@ -85,3 +85,7 @@ console.log(controlOfNum.call(num_1, 130));
 
 // Example 5_3 apply ile yazilis
 console.log(controlOfNum.apply(num_1, [30]));
+
+// Example 5_4 bind ile yazilis
+const myNewFuncForBind = controlOfNum.bind(num_1);
+console.log(myNewFuncForBind(99));
