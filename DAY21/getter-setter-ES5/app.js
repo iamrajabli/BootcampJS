@@ -1,4 +1,3 @@
-'use strict';
 // Getter ve setter
 // Example 1
 const PersonForEx1 = {
@@ -36,3 +35,24 @@ const PersonForEx2 = {
 
 PersonForEx2.setFullName('Ahmet Rajabli');
 console.log(PersonForEx2.getFullName());
+console.log("*************");
+
+// Example 3 get set istifadesi - iceride
+const PersonForEx3 = {
+    firstName: 'Hikmat',
+    lastName: 'Rajabli',
+
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+    },
+
+    set fullName(value) {
+        const newArr = value.split(" ");
+        this.firstName = newArr[0];
+        this.lastName = newArr[1];
+    }
+}
+
+PersonForEx3.fullName = 'Roman Rajabli';
+console.log(PersonForEx3.fullName);
+console.log("*************");
