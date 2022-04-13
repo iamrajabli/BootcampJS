@@ -82,3 +82,6 @@ function controlOfNum(value) {
 }
 
 console.log(controlOfNum.call(num_1, 130));
+
+// Example 5_3 apply ile yazilis
+console.log(controlOfNum.apply(num_1, [30]));
