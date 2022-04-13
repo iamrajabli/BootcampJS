@@ -33,3 +33,10 @@ let welcome_2 = function(age) {
 // Example 4_1
 // call ile parametr istifadesi
 welcome_2.call(hikmat, 22);
+
+
+// Example 4_2
+// apply ile parameter istifadesi
+welcome_2.apply(hikmat, [22])
+
+// Netice: apply ile parametr istifade ederken mutleq massiv formasinda parametr daxil etmek lazimdir.
