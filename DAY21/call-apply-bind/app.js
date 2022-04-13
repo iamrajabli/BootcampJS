@@ -1,3 +1,4 @@
+'use strict';
 // call istifadesi
 // Example 1
 let welcome = function() {
@@ -45,3 +46,22 @@ welcome_2.apply(hikmat, [22])
 // bind ile parametr istifadesi
 const newNail = welcome_2.bind(nail);
 newNail(22);
+
+// Example 5 task with call and apply
+
+// Example 5_1 standart yazilis
+const num = {
+    min: 0,
+    max: 100,
+
+    controlOfNum(value) {
+        if (typeof value !== 'number') {
+            return false;
+        } else {
+            return value >= this.min && value <= this.max
+        }
+    }
+}
+
+
+console.log(num.controlOfNum(100));
