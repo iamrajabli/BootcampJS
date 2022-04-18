@@ -62,3 +62,11 @@ let funcForEx9 = (name, age) => ({
     age: age
 });
 console.log(funcForEx9('Hikmat', 22));
+
+// Example 10 
+// Es 5 filter
+let arr = [1, 2, 3, 4, 1, 123, 123, 2, 66, 423, 14512, 3233];
+let funcForEx10 = arr.filter(function(a) {
+    return a % 2 == 0;
+});
+console.log(funcForEx10);
