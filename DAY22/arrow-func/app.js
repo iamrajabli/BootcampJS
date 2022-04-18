@@ -27,3 +27,8 @@ let funcForEx4 = (x, y) => {
     return x * y;
 }
 console.log(funcForEx4(6, 10));
+
+// Example 5
+// Es 6 function with {}
+let funcForEx5 = (x, y) => x * y;
+console.log(funcForEx5(6, 10));
