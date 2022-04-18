@@ -11,3 +11,8 @@ divs.forEach(function(item) {
     myArr.push(item);
 })
 console.log(myArr);
+
+// Example 2
+// Spread with ES6
+myArr = [h1, ...divs];
+console.log(myArr);
