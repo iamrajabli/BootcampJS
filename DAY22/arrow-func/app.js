@@ -5,3 +5,11 @@ function funcForEx1() {
 }
 
 console.log(funcForEx1());
+
+// Example 2
+// Es 6 function
+let funcForEx2 = () => {
+    return 'This is ES6 function';
+}
+
+console.log(funcForEx2());
