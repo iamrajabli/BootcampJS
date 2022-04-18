@@ -16,8 +16,14 @@ console.log(funcForEx2());
 
 // Example 3 
 // Es 5 function with params
+let funcForEx3 = function(x, y) {
+    return x * y;
+}
+console.log(funcForEx3(6, 10));
 
-let funcForEx4 = function(x, y) {
+// Example 4 
+// Es 6 function with params
+let funcForEx4 = (x, y) => {
     return x * y;
 }
 console.log(funcForEx4(6, 10));
