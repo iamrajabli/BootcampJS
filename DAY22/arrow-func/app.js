@@ -13,3 +13,11 @@ let funcForEx2 = () => {
 }
 
 console.log(funcForEx2());
+
+// Example 3 
+// Es 5 function with params
+
+let funcForEx4 = function(x, y) {
+    return x * y;
+}
+console.log(funcForEx4(6, 10));
