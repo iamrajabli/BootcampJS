@@ -39,5 +39,16 @@ let list2 = {
         console.log(this); // ozunden 2 dene yuxari scopedeki thise baxir
     },
 }
-list2.normalfunc();
-list2.arrowfunc();
+
+// Example 3
+let list3 = {
+    category: 'phone',
+    names: ['samsung', 'iphone', 'realme', 'xiaomi'],
+
+    call: function() {
+        this.names.map(name => console.log(name, this.category)); // map funksiyasi ozunden 2 dene yuxaridaki scope deki thisi getirdi. Yeni map => call => list3
+    }
+
+}
+
+list3.call();
