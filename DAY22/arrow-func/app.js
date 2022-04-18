@@ -32,3 +32,10 @@ console.log(funcForEx4(6, 10));
 // Es 6 function with {}
 let funcForEx5 = (x, y) => x * y;
 console.log(funcForEx5(6, 10));
+
+// Example 6 
+// Es 5 split
+let funcForEx6 = function(text) {
+    return text.split(' ');
+}
+console.log(funcForEx6('hi world'));
