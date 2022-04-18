@@ -54,3 +54,11 @@ let funcForEx8 = function(name, age) {
     }
 }
 console.log(funcForEx8('Hikmat', 22));
+
+// Example 9
+// Es 6 return object [moterizelere diqqet ()]
+let funcForEx9 = (name, age) => ({
+    name: name,
+    age: age
+});
+console.log(funcForEx9('Hikmat', 22));
