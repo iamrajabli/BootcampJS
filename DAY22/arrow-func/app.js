@@ -1,3 +1,4 @@
+'use strict';
 // Example 1
 // Es 5 function
 function funcForEx1() {
