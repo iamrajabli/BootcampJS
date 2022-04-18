@@ -44,3 +44,13 @@ console.log(funcForEx6('hi world'));
 // Es 6 split
 let funcForEx7 = (text) => text.split(' ');
 console.log(funcForEx7('hi world'));
+
+// Example 8
+// Es 5 return object
+let funcForEx8 = function(name, age) {
+    return {
+        name: name,
+        age: age
+    }
+}
+console.log(funcForEx8('Hikmat', 22));
