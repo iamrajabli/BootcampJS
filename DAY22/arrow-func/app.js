@@ -29,7 +29,7 @@ let funcForEx4 = (x, y) => {
 console.log(funcForEx4(6, 10));
 
 // Example 5
-// Es 6 function with {}
+// Es 6 function with {} [kod eger bir setir olacaqsa...]
 let funcForEx5 = (x, y) => x * y;
 console.log(funcForEx5(6, 10));
 
@@ -39,3 +39,8 @@ let funcForEx6 = function(text) {
     return text.split(' ');
 }
 console.log(funcForEx6('hi world'));
+
+// Example 7 
+// Es 6 split
+let funcForEx7 = (text) => text.split(' ');
+console.log(funcForEx7('hi world'));
