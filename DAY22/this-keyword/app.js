@@ -1,14 +1,13 @@
 'use strict';
-// arrow functionla normal functionun esas ferqi: normal func yeni bir scope yaratdigi halda arrow func yaratmir. 
 // Example 1
 
 let list = {
     category: 'phone',
     names: ['samsung', 'iphone', 'realme', 'xiaomi'],
-    call: function() { // call metodu yeni bir scope yaradib.
+    call: function() { // call metodu yeni bir context yaradib.
         console.log(this); // list array
         let self = this; // list arrayinin yeni deyiskene atanmasi
-        this.names.map(function(name) { // map metodu yeni bir scope yaradib. 
+        this.names.map(function(name) { // map metodu yeni bir context yaradib. 
             // console.log(this); // undefined
             // console.log(self); // list array
             console.log(name, self.category);
@@ -21,4 +20,24 @@ let list = {
         })
     }
 }
-list.call();
+
+// Example 2
+let list2 = {
+    category: 'phone',
+    names: ['samsung', 'iphone', 'realme', 'xiaomi'],
+
+    normalfunc: function() {
+        console.log(this); // ozunden yuxaridaki thise baxir 
+
+        function normalfunc_2() {
+            console.log(this); // ozunden yuxaridaki scopenin thisine baxir amma onun thisi yoxdu
+        }
+        normalfunc_2();
+    },
+
+    arrowfunc: _ => {
+        console.log(this); // ozunden 2 dene yuxari scopedeki thise baxir
+    },
+}
+list2.normalfunc();
+list2.arrowfunc();
