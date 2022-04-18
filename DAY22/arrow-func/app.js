@@ -70,3 +70,8 @@ let funcForEx10 = arr.filter(function(a) {
     return a % 2 == 0;
 });
 console.log(funcForEx10);
+
+// Example 11 
+// Es 5 filter
+let funcForEx11 = arr.filter(a => a % 2 == 0);
+console.log(funcForEx11);
