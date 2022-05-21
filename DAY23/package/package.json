@@ -1,0 +1,15 @@
+{
+    "name": "rajabli",
+    "version": "1.0.0",
+    "description": "test package",
+    "main": "sliderpackages.js",
+    "scripts": {
+        "test": "node test.js"
+    },
+    "keywords": [
+        "createslider",
+        "slider"
+    ],
+    "author": "Hikmat Rajabli",
+    "license": "ISC"
+}
