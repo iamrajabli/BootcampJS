@@ -1,0 +1,16 @@
+{
+    "name": "@rajalorem/arraytostring",
+    "version": "2.0.0",
+    "description": "this is package make string from array",
+    "main": "arrayToString.js",
+
+    "scripts": {
+        "test": "node test.js"
+    },
+
+    "keywords": [
+        "arraytostring"
+    ],
+    "author": "iamrajabli",
+    "license": "ISC"
+}
